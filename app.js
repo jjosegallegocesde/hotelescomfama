@@ -1,5 +1,6 @@
 import {Servidor} from './servidor/Servidor.js'
 
+//IMPORTAMOS DOTENV PARA MANIPULAR LAS VARIABLES DE ENTORNO
 import 'dotenv/config'
 
 //PARA UTILIZAR UNA CLASE LA DEBO INSTANCIAR
@@ -9,3 +10,5 @@ let servidorComfama=new Servidor()
 
 //enciendo el servidor
 servidorComfama.encenderServidor()
+
+console.log(process.env.PORT) // remove this after you've confirmed it working
