@@ -9,11 +9,16 @@ export class Servidor{
 
     constructor(){
         this.app = express() //atributo una variable
+        this.habilitarBody()
         this.atenderPeticiones() //atiendo las peticiones del usuario
     }
 
     atenderPeticiones(){ //ENRUTARPETICIONES
         this.app.use('/',rutas)   
+    }
+
+    habilitarBody(){
+        this.app.use(express.json())
     }
 
     encenderServidor(){

@@ -22,19 +22,35 @@ export class ControladorHabitacion{
 
     //buscar habitacion por id
     buscarHabitacionPorId(request,response){
+        let identificador=request.params.id
+        console.log(identificador)
         try{
-            response.status(200).json({}) 
+            response.status(200).json({
+                mensaje:"exito en la consulta "+identificador,
+                datos:["habi1","200USD","tv por cable"]
+            }) 
          }catch(error){ //FALLO RESOLVIENDO LA PETICION
-             response(400).json({})
+             response(400).json({
+                mensaje:"fallo en la consulta "+error,
+                datos:null
+             })
          }
     }
 
     //agregar habitacion
     agregarHabitacion(request,response){
+        let cuerpo=request.body
+        console.log(cuerpo)
         try{
-            response.status(200).json({}) 
+            response.status(200).json({
+                mensaje:"exito agregando la habitacion",
+                datos:cuerpo
+            }) 
          }catch(error){ //FALLO RESOLVIENDO LA PETICION
-             response(400).json({})
+             response(400).json({
+                mensaje:"fallo en la consulta "+error,
+                datos:null
+             })
          }
     }
 
