@@ -1,16 +1,22 @@
-class ControladorHabitacion{
+export class ControladorHabitacion{
 
 
     constructor(){}
 
     //buscar habitaciones
-    buscarHabitacion(request,response){
+    buscarHabitaciones(request,response){
 
         //Intento resolver la PETICION
         try{
-           response.status(200).json({}) 
+           response.status(200).json({
+            mensaje:"exito en la consulta",
+            datos:["habi1","200USD","tv por cable"]
+           }) 
         }catch(error){ //FALLO RESOLVIENDO LA PETICION
-            response(400).json({})
+            response(400).json({
+                mensaje:"fallo en la consulta "+error,
+                datos:null
+            })
         }
     }
 
